@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="SampleCode">
+      <UniqueIdentifier>{3216f3b2-22fc-4677-835a-920b6964f2b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleCode\2D">
+      <UniqueIdentifier>{a9c32ea3-be34-4f5a-8472-56bae9b766ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver">
+      <UniqueIdentifier>{da43d558-62f2-4a47-a68b-aaf1d78f11af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver\Include">
+      <UniqueIdentifier>{92c5db3e-1ea8-4dfd-83d1-c316f277fe5b}</UniqueIdentifier>
+      <Extensions>h;</Extensions>
+    </Filter>
+    <Filter Include="Driver\Source">
+      <UniqueIdentifier>{b6af0521-9a45-4cec-ba89-866401bd3e63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SampleCode\2D\main.c">
+      <Filter>SampleCode\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Driver\Source\2d.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Driver\Source\sys_uart.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Driver\Source\lcd.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Driver\Source\system_N9H30.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Driver\Source\sys.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Driver\Include\N9H30.h">
+      <Filter>Driver\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Driver\Include\sys.h">
+      <Filter>Driver\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Driver\Include\lcd.h">
+      <Filter>Driver\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Driver\Include\2d.h">
+      <Filter>Driver\Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile.mak" />
+    <None Include="BuildCmd.bat" />
+    <None Include="..\Driver\Source\Startup_GCC.S">
+      <Filter>Driver\Source</Filter>
+    </None>
+    <None Include="..\Driver\Source\GCC.ld">
+      <Filter>Driver\Source</Filter>
+    </None>
+  </ItemGroup>
+</Project>
