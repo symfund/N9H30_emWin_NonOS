@@ -42,7 +42,10 @@ lst/
 !ThirdParty/FATFS/doc/img/mkfatimg.zip
 !SampleCode/CRYPTO_SHA_MTP/image.bin
 
-.vs/NuDemo/v16/.suo
+# Visual Studio
+.vs/
+Debug/
+Release/
 *.db
 *.user
 *.elf

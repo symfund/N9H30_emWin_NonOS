@@ -12,6 +12,7 @@
 
 void _DemoSpiInit(void)
 {
+#ifndef _MSC_VER
     /* Configure multi function pins to SPI0 */
     outpw(REG_SYS_GPB_MFPL, (inpw(REG_SYS_GPB_MFPL) & ~0xff000000) | 0xBB000000);
     outpw(REG_SYS_GPB_MFPH, (inpw(REG_SYS_GPB_MFPH) & ~0xff) | 0xBB);
@@ -25,6 +26,7 @@ void _DemoSpiInit(void)
     spiIoctl(0, SPI_IOC_SET_TX_BITLEN, 8, 0);
     // set transfer mode to mode-0
     spiIoctl(0, SPI_IOC_SET_MODE, 0, 0);
+#endif
 }
 
 void SpiFlash_ChipErase(void)

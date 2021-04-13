@@ -215,6 +215,7 @@ INT  sysIsKbHit()
  */
 INT32 sysInitializeUART(void)
 {
+#ifndef _MSC_VER
     /* enable UART0 clock */
     outpw(REG_CLK_PCLKEN0, inpw(REG_CLK_PCLKEN0) | 0x10000);
 
@@ -224,6 +225,8 @@ INT32 sysInitializeUART(void)
     /* UART0 line configuration for (115200,n,8,1) */
     outpw(REG_UART0_LCR, inpw(REG_UART0_LCR) | 0x7);
     outpw(REG_UART0_BAUD, 0x30000066); /* 12MHz reference clock input, 115200 */
+#endif
+
     return 0;
 }
 
@@ -237,6 +240,7 @@ INT32 sysInitializeUART(void)
  */
 void sysprintf(PINT8 pcStr,...)
 {
+#ifndef _MSC_VER
     INT8  *argP;
 
     vaStart(argP, pcStr);       /* point at the end of the format string */
@@ -247,6 +251,7 @@ void sysprintf(PINT8 pcStr,...)
         else
             _PutChar_f(*pcStr++);
     }
+#endif
 }
 
 /**

@@ -43,6 +43,8 @@ unsigned int gSDHReferenceClock;
 #ifdef __ICCARM__
 #pragma data_alignment = 4096
 unsigned char _sd_ucSDHCBuffer[512];
+#elif defined (_MSC_VER)
+__declspec(align(4096)) unsigned char _sd_ucSDHCBuffer[512];
 #else
 unsigned char _sd_ucSDHCBuffer[512] __attribute__((aligned(4096)));
 #endif

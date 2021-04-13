@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{0DC02475-37AE-4ED0-BAEC-532E3BE13D2C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>emWin_GUIDemo</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <PlatformToolset>v142</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <PlatformToolset>v142</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>BuildCmd.bat all</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>BuildCmd.bat clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>BuildCmd.bat rebuild</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <TargetName>NuDemo</TargetName>
+    <OutDir>$(ProjectDir)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>BuildCmd.bat all</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>BuildCmd.bat clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>BuildCmd.bat rebuild</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <TargetName>NuDemo</TargetName>
+    <OutDir>$(ProjectDir)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <NMakeBuildCommandLine>$(MSBuildProjectDirectory)\..\BuildCmd.bat all $(MSBuildProjectDirectory)\$(Platform)\$(Configuration)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>$(MSBuildProjectDirectory)\..\BuildCmd.bat rebuild $(MSBuildProjectDirectory)\$(Platform)\$(Configuration)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>$(MSBuildProjectDirectory)\..\BuildCmd.bat clean $(MSBuildProjectDirectory)\$(Platform)\$(Configuration)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)Driver\Include;$(SolutionDir)SampleCode\emWin_GUIDemo\tslib;$(SolutionDir)ThirdParty\emWin\Include;$(SolutionDir)ThirdParty\emWin\Config;$(SolutionDir)ThirdParty\FATFS\src</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <NMakeBuildCommandLine>$(MSBuildProjectDirectory)\..\BuildCmd.bat all $(MSBuildProjectDirectory)\$(Platform)\$(Configuration)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>$(MSBuildProjectDirectory)\..\BuildCmd.bat rebuild $(MSBuildProjectDirectory)\$(Platform)\$(Configuration)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>$(MSBuildProjectDirectory)\..\BuildCmd.bat clean $(MSBuildProjectDirectory)\$(Platform)\$(Configuration)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)Driver\Include;$(SolutionDir)SampleCode\emWin_GUIDemo\tslib;$(SolutionDir)ThirdParty\emWin\Include;$(SolutionDir)ThirdParty\emWin\Config;$(SolutionDir)ThirdParty\FATFS\src</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeaderFile />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeaderOutputFile />
+      <AdditionalIncludeDirectories>..\..\ThirdParty\emWin\Include;..\..\Driver\Include;..\..\ThirdParty\emWin\Config\Win32;..\..\SampleCode\emWin_GUIDemo\tslib;..\..\ThirdParty\FATFS\src</AdditionalIncludeDirectories>
+      <AdditionalOptions>/wd4047 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ModuleDefinitionFile>$(ProjectDir)nu_SimApp.def</ModuleDefinitionFile>
+      <AdditionalDependencies>NUGUICore.lib;NUGUISim.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBC.lib;</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>..\..\ThirdParty\emWin\Lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeaderFile />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeaderOutputFile />
+      <AdditionalIncludeDirectories>..\..\ThirdParty\emWin\Include;..\..\Driver\Include;..\..\ThirdParty\emWin\Config\Win32;..\..\SampleCode\emWin_GUIDemo\tslib;..\..\ThirdParty\FATFS\src</AdditionalIncludeDirectories>
+      <AdditionalOptions>/wd4047 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ModuleDefinitionFile>$(ProjectDir)nu_SimApp.def</ModuleDefinitionFile>
+      <AdditionalDependencies>NUGUICore.lib;NUGUISim.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBC.lib;</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>..\..\ThirdParty\emWin\Lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\Driver\Source\Startup_GCC.S" />
+    <None Include="..\BuildCmd.bat" />
+    <None Include="Makefile.mak" />
+    <None Include="nu_SimApp.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Driver\Source\2d.c" />
+    <ClCompile Include="..\..\Driver\Source\adc.c" />
+    <ClCompile Include="..\..\Driver\Source\gpio.c" />
+    <ClCompile Include="..\..\Driver\Source\jpegcodec.c" />
+    <ClCompile Include="..\..\Driver\Source\lcd.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\sdh.c" />
+    <ClCompile Include="..\..\Driver\Source\spi.c" />
+    <ClCompile Include="..\..\Driver\Source\sys.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\system_N9H30.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\sys_timer.c" />
+    <ClCompile Include="..\..\Driver\Source\sys_uart.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_AntialiasedText.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Automotive.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_BarGraph.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Bitmap.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_ColorBar.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Conf.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Cursor.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Fading.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Graph.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_IconView.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_ImageFlow.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Intro.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Listview.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_RadialMenu.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Resource.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Skinning.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Speed.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Speedometer.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Start.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_TransparentDialog.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Treeview.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_VScreen.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_WashingMachine.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_ZoomAndRotate.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\main.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\diskio.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\fbutils.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\SDGlue.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\spilib.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\testutils.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\TouchPanel.c" />
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\ts_calibrate.c" />
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\GUIConf.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\GUI_X.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\LCDConf.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\Win32\GUIConf.c" />
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\Win32\LCDConf.c" />
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\Win32\SIMConf.c" />
+    <ClCompile Include="..\..\ThirdParty\FATFS\src\ff.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="nu_SimApp.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="nu_SimApp.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

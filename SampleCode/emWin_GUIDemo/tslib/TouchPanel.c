@@ -42,6 +42,7 @@ INT32 PenDownCallback(UINT32 status, UINT32 userData)
 
 int Init_TouchPanel(void)
 {
+#ifndef _MSC_VER
     int userdata=0;
 //  adc_init();
 //  adc_open(ADC_TS_4WIRE, XSIZE_PHYS, YSIZE_PHYS);  //320x240
@@ -52,6 +53,8 @@ int Init_TouchPanel(void)
     adcIoctl(PEDEF_ON,(UINT32)PenDownCallback,userdata);
     pendown_complete=0;
     adcIoctl(PEPOWER_ON,0,0);
+#endif
+
     return 1;
 }
 

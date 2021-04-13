@@ -1,0 +1,14 @@
+; Declares the module parameters for the DLL.
+
+LIBRARY NuDemo
+
+EXPORTS
+    ; Explicit exports can go here
+    AppMain                 @1
+    NUSIM_GUI_Enable        @2
+    NUSIM_LCD_Init          @3
+    NUSIM_LCD_Exit          @4
+    NUSIM_SetMouseState     @5
+    NUSIM_CheckMouseState   @6
+    NUSIM_GetXSize          @7
+    NUSIM_GetYSize          @8

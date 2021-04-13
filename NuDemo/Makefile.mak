@@ -102,7 +102,7 @@ target: $(MAIN)
 
 all: target
 
-rebuild:
+rebuild: all
 	@echo "rebuild done"
 	
 clean:

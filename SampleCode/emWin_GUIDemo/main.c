@@ -98,6 +98,7 @@ void LCD_initial(void)
     outpw(REG_SYS_GPA_MFPL, 0x22222222);
     //GPA8 ~ GPA15 (DATA8~15)
     outpw(REG_SYS_GPA_MFPH, 0x22222222);
+
 #ifdef _PANEL_FW070TFT_24BPP_
     //GPD8 ~ GPD15 (DATA16~23)
     outpw(REG_SYS_GPD_MFPH, 0x22222222);
@@ -107,6 +108,7 @@ void LCD_initial(void)
     // LCD clock is selected from UPLL and divide to 20MHz
     outpw(REG_CLK_DIVCTL1, (inpw(REG_CLK_DIVCTL1) & ~0xff1f) | 0xe18);
 #endif
+
 #ifdef _PANEL_FW070TFT_24BPP_
     // LCD clock is selected from UPLL and divide to 30MHz
     outpw(REG_CLK_DIVCTL1, (inpw(REG_CLK_DIVCTL1) & ~0xff1f) | 0x918);
@@ -116,33 +118,41 @@ void LCD_initial(void)
     // Init LCD interface for E50A2V1 LCD module
     vpostLCMInit(DIS_PANEL_E50A2V1);
 #endif
+
 #ifdef _PANEL_FW070TFT_24BPP_
     // Init LCD interface for FW070TFT LCD module
     vpostLCMInit(DIS_PANEL_FW070TFT);
 #endif
+
+#ifndef _MSC_VER
     // Set scale to 1:1
     vpostVAScalingCtrl(1, 0, 1, 0, VA_SCALE_INTERPOLATION);
+#endif
 
     // Set display color depth
 #ifdef _PANEL_E50A2V1_16BPP_
     vpostSetVASrc(VA_SRC_RGB565);
 #endif
+
 #ifdef _PANEL_FW070TFT_24BPP_
     vpostSetVASrc(VA_SRC_RGB888);
 #endif
 
     // Get pointer of video frame buffer
     // Note: before get pointer of frame buffer, must set display color depth first
+#ifndef _MSC_VER
     g_VAFrameBuf = vpostGetFrameBuffer();
     if(g_VAFrameBuf == NULL)
     {
         sysprintf("Get buffer error !!\n");
         while(1);
     }
+#endif
 
 #ifdef _PANEL_E50A2V1_16BPP_
     memset((void *)g_VAFrameBuf, 0, LCD_XSIZE*LCD_YSIZE*2);
 #endif
+
 #ifdef _PANEL_FW070TFT_24BPP_
     memset((void *)g_VAFrameBuf, 0, LCD_XSIZE*LCD_YSIZE*4);
 #endif
@@ -156,7 +166,9 @@ volatile int g_enable_Touch;
 
 void TMR0_IRQHandler(void)
 {
+#ifndef _MSC_VER
     OS_TimeMS++;
+#endif
 }
 
 void TMR0_IRQHandler_TouchTask(void)
@@ -321,10 +333,13 @@ int main(void)
     uint16_t u16ID;
 #endif
 
+#ifndef _MSC_VER
     *((volatile unsigned int *)REG_AIC_MDCR)=0xFFFFFFFF;  // disable all interrupt channel
     *((volatile unsigned int *)REG_AIC_MDCRH)=0xFFFFFFFF;  // disable all interrupt channel
     *(volatile unsigned int *)(CLK_BA+0x18) |= (1<<16); /* Enable UART0 */
     *(volatile unsigned int *)(CLK_BA+0x18) |= (1<<3); /* Enable GPIO */
+#endif
+
     sysDisableCache();
     sysFlushCache(I_D_CACHE);
     sysEnableCache(CACHE_WRITE_BACK);
@@ -334,14 +349,18 @@ int main(void)
     g_enable_Touch = 0;
 #endif
 
+#ifndef _MSC_VER
     OS_TimeMS = 0;
+#endif
 
     SYS_Init();
 
+#ifndef _MSC_VER
     sysSetTimerReferenceClock(TIMER0, 12000000);
     sysStartTimer(TIMER0, 1000, PERIODIC_MODE);         /* 1000 ticks/per sec ==> 1tick/1ms */
     sysSetTimerEvent(TIMER0,  1, (PVOID)TMR0_IRQHandler);           /*  1 tick  per call back */
     sysSetTimerEvent(TIMER0, 20, (PVOID)TMR0_IRQHandler_TouchTask); /* 20 ticks per call back */
+#endif
 
 #ifdef __USE_SD__
     sysInstallISR(HIGH_LEVEL_SENSITIVE|IRQ_LEVEL_1, SDH_IRQn, (PVOID)SDH_IRQHandler);
@@ -353,7 +372,10 @@ int main(void)
     sysprintf("+-------------------------------------------------+\n");
     sysprintf("|                 Tslib Sample Code               |\n");
     sysprintf("+-------------------------------------------------+\n\n");
+
+#ifndef _MSC_VER
     LCD_initial();
+#endif
 
 #if GUI_SUPPORT_TOUCH
     Init_TouchPanel();
@@ -401,6 +423,7 @@ int main(void)
 #else
     _DemoSpiInit();
 
+#ifndef _MSC_VER
     // check flash id
     if((u16ID = SpiFlash_ReadMidDid()) == 0xEF17)
         sysprintf("Flash found: W25Q128BV ...\n");
@@ -412,7 +435,9 @@ int main(void)
     sysprintf("%x\n", g_pu32Res[7]);
     if (g_pu32Res[7] != 0x55AAA55A)
     {
+#ifndef _MSC_VER
         ts_calibrate(XSIZE_PHYS, YSIZE_PHYS);
+#endif
         //GUI_SetDrawMode(GUI_DRAWMODE_NORMAL);
         sysprintf("Sector Erase ...");
 
@@ -428,6 +453,7 @@ int main(void)
     else
         ts_readfile();
 #endif
+#endif
 
 //    ts_test(__DEMO_TS_WIDTH__, __DEMO_TS_HEIGHT__);
 
@@ -437,3 +463,52 @@ int main(void)
     MainTask();
     return 0;
 }
+
+#ifdef _MSC_VER
+
+INT32   sysDisableInterrupt(IRQn_Type eIntNo)
+{
+    return 0;
+}
+
+INT32   sysEnableInterrupt(IRQn_Type eIntNo)
+{
+    return 0;
+}
+
+INT32   sysSetInterruptType(IRQn_Type eIntNo, UINT32 uIntSourceType)
+{
+    return 0;
+}
+
+PVOID   sysInstallISR(INT32 nIntTypeLevel, IRQn_Type eIntNo, PVOID pvNewISR)
+{
+    return NULL;
+}
+
+INT32 sysSetLocalInterrupt(INT32 nIntState)
+{
+    return 0;
+}
+
+void    sysDisableCache(void)
+{
+
+}
+
+INT32   sysEnableCache(UINT32 uCacheOpMode)
+{
+    return 0;
+}
+
+void    sysFlushCache(INT32 nCacheType)
+{
+
+}
+
+UINT32 sysGetClock(CLK_Type clk)
+{
+    return 0;
+}
+
+#endif

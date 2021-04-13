@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\BuildCmd.bat" />
+    <None Include="Makefile.mak" />
+    <None Include="..\..\Driver\Source\Startup_GCC.S">
+      <Filter>Driver\Source</Filter>
+    </None>
+    <None Include="nu_SimApp.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SampleCode">
+      <UniqueIdentifier>{2bdb2240-bfef-47e4-87e4-ad8e7ed36b8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleCode\emWin_GUIDemo">
+      <UniqueIdentifier>{8eb96bb0-13af-4580-8769-605485d3101b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleCode\emWin_GUIDemo\tslib">
+      <UniqueIdentifier>{9dc1b233-580f-4b16-ad19-33c631b1ce10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{bd837dff-5871-400c-b478-d9d2e406bbde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\FATFS">
+      <UniqueIdentifier>{89ed6c89-6f50-4c25-a4ff-410669081035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\FATFS\src">
+      <UniqueIdentifier>{12807805-0a12-4963-b076-e4e45bcff489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver">
+      <UniqueIdentifier>{8f383aed-5309-434e-9ad9-6b7c8db26fa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver\Source">
+      <UniqueIdentifier>{806a699c-7e14-4c7a-b2c4-dcf1341ea059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\emWin">
+      <UniqueIdentifier>{9da0cd22-deb4-492b-8841-3f581d1051d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\emWin\Config">
+      <UniqueIdentifier>{84ca9a15-8591-4bcc-bb9d-04f28e56f9da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleCode\emWin_GUIDemo\Application">
+      <UniqueIdentifier>{76dd1651-1825-4be6-9605-73fa76cd9b2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\emWin\Config\Win32">
+      <UniqueIdentifier>{95f60f1c-8448-445c-bdbf-f2695d1943a0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\SDGlue.c">
+      <Filter>SampleCode\emWin_GUIDemo\tslib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\TouchPanel.c">
+      <Filter>SampleCode\emWin_GUIDemo\tslib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\diskio.c">
+      <Filter>SampleCode\emWin_GUIDemo\tslib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\fbutils.c">
+      <Filter>SampleCode\emWin_GUIDemo\tslib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\spilib.c">
+      <Filter>SampleCode\emWin_GUIDemo\tslib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\testutils.c">
+      <Filter>SampleCode\emWin_GUIDemo\tslib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\tslib\ts_calibrate.c">
+      <Filter>SampleCode\emWin_GUIDemo\tslib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\main.c">
+      <Filter>SampleCode\emWin_GUIDemo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\FATFS\src\ff.c">
+      <Filter>ThirdParty\FATFS\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\2d.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\adc.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\gpio.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\jpegcodec.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\lcd.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\sdh.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\spi.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\sys.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\sys_timer.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\sys_uart.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Driver\Source\system_N9H30.c">
+      <Filter>Driver\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\GUIConf.c">
+      <Filter>ThirdParty\emWin\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\GUI_X.c">
+      <Filter>ThirdParty\emWin\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\LCDConf.c">
+      <Filter>ThirdParty\emWin\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_AntialiasedText.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Automotive.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_BarGraph.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Bitmap.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_ColorBar.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Conf.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Cursor.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Fading.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Graph.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_IconView.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_ImageFlow.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Intro.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Listview.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_RadialMenu.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Resource.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Skinning.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Speed.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Speedometer.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Start.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_TransparentDialog.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_Treeview.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_VScreen.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_WashingMachine.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SampleCode\emWin_GUIDemo\Application\GUIDEMO_ZoomAndRotate.c">
+      <Filter>SampleCode\emWin_GUIDemo\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="nu_SimApp.c" />
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\Win32\GUIConf.c">
+      <Filter>ThirdParty\emWin\Config\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\Win32\LCDConf.c">
+      <Filter>ThirdParty\emWin\Config\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdParty\emWin\Config\Win32\SIMConf.c">
+      <Filter>ThirdParty\emWin\Config\Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="nu_SimApp.h" />
+  </ItemGroup>
+</Project>
