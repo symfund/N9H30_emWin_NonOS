@@ -47,6 +47,8 @@ lst/
 Debug/
 Release/
 *.db
-*.user
 *.elf
 *.cache
+*.exp
+*.ilk
+*.pdb
